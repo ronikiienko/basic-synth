@@ -1,7 +1,12 @@
 cmake_minimum_required(VERSION 3.26)
 
-set(PROJECT_NAME SFML-template)
-set(SOURCES src/main.cpp)
+set(PROJECT_NAME basic-synth)
+set(SOURCES src/main.cpp
+        src/modules/Angle.h
+        src/modules/Rand.h
+        src/modules/Rectangle.h
+        src/modules/Vector.h
+        src/modules/ThreadPool.h)
 
 project(${PROJECT_NAME})
 
@@ -13,5 +18,5 @@ fetchcontent_makeavailable(SFML)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} sfml-system sfml-window sfml-graphics)
+target_link_libraries(${PROJECT_NAME} sfml-system sfml-window sfml-graphics sfml-audio)
 
