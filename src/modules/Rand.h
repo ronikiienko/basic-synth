@@ -18,6 +18,7 @@ private:
     std::uniform_real_distribution<T> distribution{0, 1};
 public:
     explicit RealNumberGenerator(int seed) : NumberGenerator(seed) {}
+    explicit RealNumberGenerator() : NumberGenerator() {}
 
     T get() {
         return distribution(gen);
